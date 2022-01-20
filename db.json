@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "signupUsers": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "fullName": "shorif",
+      "email": "shorif@gmail.com",
+      "mobile": "01010",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "fullName": "sdsd",
+      "email": "shorif@gmail.com",
+      "mobile": "20",
+      "password": "dfdfd",
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
