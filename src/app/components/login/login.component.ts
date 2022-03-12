@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,10 +15,21 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:['', Validators.required],
-      password:['', Validators.required]
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)]),
     })
   }
+
+
+  // for email validations start
+  get email(){
+    return this.loginForm.get('email');
+  }
+  get password(){
+    return this.loginForm.get('password')
+  }
+  // for email validations end
+
   login(){
     this.http.get<any>('http://localhost:3000/signupUsers')
     .subscribe(res=>{
