@@ -72,11 +72,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Shorif</td>
-            <td>01515151515</td>
-            <td>shorif@gmail.com</td>
+          <tr *ngFor="let user of userss; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.email}}</td>
           </tr>
         </tbody>
       </table>

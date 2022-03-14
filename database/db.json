@@ -1,9 +1,10 @@
 {
   "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "shorif",
+      "phone": "+8801828562372",
+      "email": "shorif@gmail.com",
+      "id": 1
     }
   ],
   "signupUsers": [
