@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { users } from './userList'
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('userForm')
+  // @ViewChild('userForm')
   userForm!: NgForm;
   constructor() { }
 
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  onFormSubmit(user:any){
+  onFormSubmit(user: users){
     console.log(user);
   }
 

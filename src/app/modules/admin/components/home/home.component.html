@@ -27,36 +27,38 @@
             <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm.value)">
                 <div class="form-group">
                   <label>Name</label>
-                  <input type="text" class="form-control" name="firstName" ngModel required #firstName="ngModel">
+                  <!-- <input type="text" class="form-control" name="name" ngModel required #name="ngModel"> -->
+                  <input type="text" class="form-control" name="name" ngModel required #name>
                 </div>
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="text" class="form-control" name="Phone" ngModel required #Phone="ngModel">
+                  <input type="text" class="form-control" name="phone" ngModel required #phone>
                 </div>
                 <div class="form-group">
                   <label>E-mail</label>
-                  <input type="text" class="form-control" name="email" ngModel required #Phone="ngModel">
+                  <input type="text" class="form-control" name="email" ngModel required #email>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" (click)="resetUserForm(userForm)">Reset</button>
                     <button type="submit" class="btn btn-primary">Add</button>
                   </div>
             </form>
             <button type="submit">Submit</button> 
-              <button type="button" (click)="resetUserForm(userForm)">Reset</button>
+              
          </div>	
          
          
 
-         <p>First name value: {{ firstName }}</p>
-              <p>First name valid: {{ Phone }}</p>
-              <p>First name valid: {{ Phone }}</p>
-              <p>Form value: {{ userForm.value | json }}</p>
         </div>
       </div>
     </div>
  
 
+         <p>First name value: {{ name }}</p>
+              <p>First name valid: {{ phone }}</p>
+              <p>First name valid: {{ email }}</p>
+              <p>Form value: {{ userForm.value | json }}</p>
 
 
   <div class="container">
