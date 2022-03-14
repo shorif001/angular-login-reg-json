@@ -1,51 +1,90 @@
-<div class="home-field">
-    <div class="container pt-5 pb-5">
-        <div class="col-12">
-            <div class="d-flex flex-wrap justify-content-between">
-                <div class="card mt-2 neu-1">
-                    <div class="card-body">
-                        <h5 class="card-title">Admin Component</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a class="btn" routerLink="">Go somewhere</a>
-                    </div>
-                </div>
-               
-                <div class="card mt-2 neu-1">
-                    <div class="card-body">
-                        <h5 class="card-title">Admin Component</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a class="btn" routerLink="">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card mt-2 neu-1">
-                    <div class="card-body">
-                        <h5 class="card-title">Admin Component</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a class="btn" routerLink="">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card mt-2 neu-1">
-                    <div class="card-body">
-                        <h5 class="card-title">Admin Component</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a class="btn" routerLink="">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card mt-2 neu-1">
-                    <div class="card-body">
-                        <h5 class="card-title">Admin Component</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a class="btn" routerLink="">Go somewhere</a>
-                    </div>
-                </div>
-                <div class="card mt-2 neu-1">
-                    <div class="card-body">
-                        <h5 class="card-title">Admin Component</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a class="btn" routerLink="">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+
+<div class="container">
+    <div class="user-list">
+        <h4>Create New Users</h4>
     </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Add Users</button>
+
 </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            
+            <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm.value)">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" name="firstName" ngModel required #firstName="ngModel">
+                </div>
+                <div class="form-group">
+                  <label>Phone</label>
+                  <input type="text" class="form-control" name="Phone" ngModel required #Phone="ngModel">
+                </div>
+                <div class="form-group">
+                  <label>E-mail</label>
+                  <input type="text" class="form-control" name="email" ngModel required #Phone="ngModel">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                  </div>
+            </form>
+            <button type="submit">Submit</button> 
+              <button type="button" (click)="resetUserForm(userForm)">Reset</button>
+         </div>	
+         
+         
+
+         <p>First name value: {{ firstName }}</p>
+              <p>First name valid: {{ Phone }}</p>
+              <p>First name valid: {{ Phone }}</p>
+              <p>Form value: {{ userForm.value | json }}</p>
+        </div>
+      </div>
+    </div>
+ 
+
+
+
+  <div class="container">
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Shorif</td>
+            <td>01515151515</td>
+            <td>shorif@gmail.com</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+
+
+
+
+
+
+
+

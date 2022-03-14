@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ServicesComponent } from './components/services/services.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,11 +20,12 @@ import { ServicesComponent } from './components/services/services.component';
     ContactComponent,
     AboutComponent,
     AdminDashboardComponent,
-    ServicesComponent
+    ServicesComponent,
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

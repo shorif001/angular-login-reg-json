@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "signupUsers": [
+    {
+      "fullName": "shorif ahmed",
+      "email": "shorif@gmail.com",
+      "mobile": "20",
+      "password": "123",
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

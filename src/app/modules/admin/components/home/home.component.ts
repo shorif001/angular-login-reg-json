@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('userForm')
+  userForm!: NgForm;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+  onFormSubmit(user:any){
+    console.log(user);
+  }
+
+resetUserForm(userForm: NgForm) {
+  userForm.resetForm();;
+}
 
 }
