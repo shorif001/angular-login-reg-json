@@ -24,16 +24,21 @@
         <div class="modal-body">
           
             
-            <form #userForm="ngForm" (ngSubmit)="userSubmit(userForm.value)">
+            <form #userForm="ngForm" (ngSubmit)="onAddUser(userForm.value)">
                 <div class="form-group">
                   <label>Name</label>
                   <!-- <input type="text" class="form-control" name="name" ngModel required #name="ngModel"> -->
-                  <input type="text" class="form-control" name="name" ngModel required #name>
+                  <input type="text" class="form-control validation-Cls" name="name" ngModel required #name>
                 </div>
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="text" class="form-control" name="phone" ngModel required #phone>
+                  <input type="text" class="form-control validation-Cls" name="phone" ngModel required #phone>
                 </div>
+                <div class="form-group">
+                  <label>E-mail</label>
+                  <input type="text" class="form-control validation-Cls" name="email" ngModel required #email>
+                </div>
+                <!-- <span *ngIf="email && email.invalid && email.touched">This field required</span> -->
                 <div class="form-group">
                   <label>E-mail</label>
                   <input type="text" class="form-control" name="email" ngModel required #email>
@@ -72,7 +77,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of userss; index as i">
+          <tr *ngFor="let user of users; index as i">
             <th scope="row">{{i+1}}</th>
             <td>{{user.name}}</td>
             <td>{{user.phone}}</td>

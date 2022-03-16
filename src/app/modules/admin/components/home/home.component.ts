@@ -1,19 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { users } from './userList'
+import { usersProperty } from './userList'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'] 
 })
 export class HomeComponent implements OnInit {
 
   // @ViewChild('userForm')
   userForm!: NgForm;
 
-  userss = [
+  users = [
     {name: 'shorif', phone:'01010001', email:'shorif@gmail.com'},
     {name: 'shorif', phone:'01010001', email:'shorif@gmail.com'}
   ];
@@ -26,11 +26,10 @@ export class HomeComponent implements OnInit {
   }
 
 
-  userSubmit(userData: users){
+  onAddUser(userData: usersProperty){
     console.log(userData);
-    this.userss = this.userForm.value;
-    this.userss.push(userData);
-    this.http.post<users>(this.url, userData).subscribe((res)=>{
+    this.users.push(userData);
+    this.http.post<usersProperty>(this.url, userData).subscribe(res=>{
       console.log(res);
     })
   }
