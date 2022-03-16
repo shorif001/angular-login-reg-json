@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  onFormSubmit(userData: users){
+  userSubmit(userData: users){
     console.log(userData);
     this.userss = this.userForm.value;
     this.userss.push(userData);
